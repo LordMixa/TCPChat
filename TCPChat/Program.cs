@@ -1,10 +1,12 @@
 ﻿namespace TCPChat
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //Thread serverThread = new Thread(DiscoveryServer.StartServer);
+            //serverThread.Start();
+            ChatServer.StartServer();
         }
     }
 }
