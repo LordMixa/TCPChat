@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            //Thread serverThread = new Thread(DiscoveryServer.StartServer);
-            //serverThread.Start();
-            ChatServer.StartServer();
+            Thread serverThread = new Thread(DiscoveryServer.StartServer);
+            serverThread.Start();
+            //ChatServer.StartServer();
         }
     }
 }

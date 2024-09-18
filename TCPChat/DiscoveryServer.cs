@@ -22,10 +22,9 @@ public class DiscoveryServer
                 string receivedData = Encoding.ASCII.GetString(receiveBytes);
                 Console.WriteLine($"Received discovery request from {groupEP.Address}: {receivedData}");
 
-                string response = $"Chat server is here at {IPAddress.Any}";
+                string response = $"Chat server is here at {groupEP.Address}:{discoveryPort}";
                 byte[] responseBytes = Encoding.ASCII.GetBytes(response);
-                IPEndPoint responseEP = new IPEndPoint(IPAddress.Any, 5002);
-                udpListener.Send(responseBytes, responseBytes.Length, responseEP);
+                udpListener.Send(responseBytes, responseBytes.Length, groupEP);
             }
             catch (Exception e)
             {
